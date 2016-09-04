@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nuhin13.allNewspaper" >
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/newspapers"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".Splashscreen"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.nuhin13.allNewspaper.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAINACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+        android:name="com.nuhin13.allNewspaper.Webcontent" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.BanglaNews" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.EnglishNewPaper" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.OnlineNewPaper" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.SportsNewsPaper" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Local1st" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Sylhet_local" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Chittagon_local" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Khulna_local" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Rajshahi_local" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Other_local" />
+        <activity
+        android:name="com.nuhin13.allNewspaper.TechnologyBasedNewspaper" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.ittifaq" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Amardesh" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Samakal" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.AmaderSomoy" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Nayadiganta" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.KalerKontha" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.JJDin" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.BDprotidin" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.inqilab" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Manabjabin" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Sangram" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.jonkontho" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Zugantor" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Sangbad" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.SokalerKhobor" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Gonokontho" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.BonikBarta" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.AmaderOrthoniti" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Dinkal" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Manabkontho" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Independent" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Sun" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.DhakaTribune" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.DailyStar" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.NewAge" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Observer" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.BangladeshToday" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Hawker" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Gurdian" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.NewsToday" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Prothom_alo_english" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.FinancialExpress" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.GoodMorning" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.BdNews24" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.GolfNews" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Economist" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.BanglaCricket" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.BangladeshCricket" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.BanladeshKhela" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.EspnCricinfo" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.EspnFC" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Fifa" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Goal" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.BBCsports" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.BangladeshFootball" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.KhelarJogot" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Tectunes" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.TunerPage" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.PriyoTech" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Tectweets" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.BigganOprojukti" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.TechKotha" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Moumachi" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.BanglaNews24" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Priyo" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.BanglaTribune" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.BartaBangla" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.BBCbangla" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.DhakaTimes" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.BDView24" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.ShersshaNews" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Poriborton" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.BSS" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Chaneel24" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.DMPnews" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.Dnewsbd" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.IndependentTV" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.DW" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.JagoNews24" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.NTV" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.RTNN" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.RisingBd" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.VOA" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.SomoyerKonthosor" />
+
+        <activity
+            android:name="com.nuhin13.allNewspaper.SylheterAlap" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.AmderSylhet" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.SylheterSokal" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.DailySylhet" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.SylheterSongbad" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.SylhetExpress" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.SylhetNews24" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.SylhetNewsTime" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.SylhetNewsWorld" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.SylhetReport" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.SylhetView24" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.SylhetWatch24" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.SurmaTimes" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.HabigonjNews24" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.DainikAjadi" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.DainikPurbokon" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.SuprobatBangladesh" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.DainikPurbodesh" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.CTGdaily" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.CakariyaNews" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.CoxBazarNews" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.RamuNews" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.TecnafNews" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.KhulnaNews" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.SatkhiraNews" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.DainikPurachal" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.AndolonBazar" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.PatraDut" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.NewsPabna" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.DainikKorotoya" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.SonaliSangbad" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.MathaVanga" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.MeherpurSangbad" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.SangbadKonika" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.AjkerJamalpur" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.CholomanNoyakhali" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.GramerKagoj" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.LokSongbas" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.DinajpurNews" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.UnitedNew24" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.NotunKhonr" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.AlokitoBangladesh" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.VorerKagoj" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.demo" />
+        <activity
+            android:name="com.nuhin13.allNewspaper.PagerActivity" />
+
+
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+
+
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+
+    </application>
+
+</manifest>
