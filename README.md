@@ -6,3 +6,5 @@
 	5.Technological Blogs
 	6.Local Newspapers
 	
+Download link : https://play.google.com/store/apps/details?id=com.nuhin13.allNewspaper
+	
