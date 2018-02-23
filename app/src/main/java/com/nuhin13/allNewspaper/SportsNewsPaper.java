@@ -93,35 +93,35 @@ public class SportsNewsPaper extends AppCompatActivity {
 
 
                 //Checking if the item is in checked state or not, if not make it in checked state
-                if(menuItem.isChecked()) menuItem.setChecked(false);
+                if (menuItem.isChecked()) menuItem.setChecked(false);
                 else menuItem.setChecked(true);
 
                 //Closing drawer on item click
                 drawerLayout.closeDrawers();
 
                 //Check to see which item was being clicked and perform appropriate action
-                switch (menuItem.getItemId()){
+                switch (menuItem.getItemId()) {
 
 
                     //Replacing the main content with ContentFragment Which is our Inbox View;
                     case R.id.inbox:
 
 
-                        Intent intent = new Intent(SportsNewsPaper.this,BanglaNews.class);
+                        Intent intent = new Intent(SportsNewsPaper.this, BanglaNews.class);
                         startActivity(intent);
 
 
                         return true;
-                        // For rest of the options we just show a toast on click
+                    // For rest of the options we just show a toast on click
 
                     case R.id.starred:
-                        Intent intent1 = new Intent(SportsNewsPaper.this,EnglishNewPaper.class);
+                        Intent intent1 = new Intent(SportsNewsPaper.this, EnglishNewPaper.class);
                         startActivity(intent1);
 
                         return true;
 
                     case R.id.sent_mail:
-                        Intent intent2 = new Intent(SportsNewsPaper.this,OnlineNewPaper.class);
+                        Intent intent2 = new Intent(SportsNewsPaper.this, OnlineNewPaper.class);
                         startActivity(intent2);
 
                         return true;
@@ -129,12 +129,12 @@ public class SportsNewsPaper extends AppCompatActivity {
 
                         return true;
                     case R.id.allmail:
-                        Intent intent4 = new Intent(SportsNewsPaper.this,TechnologyBasedNewspaper.class);
+                        Intent intent4 = new Intent(SportsNewsPaper.this, TechnologyBasedNewspaper.class);
                         startActivity(intent4);
 
                         return true;
                     case R.id.trash:
-                        Intent intent5 = new Intent(SportsNewsPaper.this,Local1st.class);
+                        Intent intent5 = new Intent(SportsNewsPaper.this, Local1st.class);
                         startActivity(intent5);
 
                         return true;
@@ -159,7 +159,7 @@ public class SportsNewsPaper extends AppCompatActivity {
                         return true;
 
                     default:
-                        Toast.makeText(getApplicationContext(),"Somethings Wrong",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Somethings Wrong", Toast.LENGTH_SHORT).show();
                         return true;
 
                 }
@@ -168,7 +168,7 @@ public class SportsNewsPaper extends AppCompatActivity {
         disableNavigationViewScrollbars(navigationView);
         // Initializing Drawer Layout and ActionBarToggle
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.openDrawer, R.string.closeDrawer){
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.openDrawer, R.string.closeDrawer) {
 
             @Override
             public void onDrawerClosed(View drawerView) {
@@ -195,7 +195,7 @@ public class SportsNewsPaper extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapter, View v,
                                     int position, long arg3) {
-				/*
+                /*
 				 * Toast.makeText(getActivity().getApplicationContext(),
 				 * item.get(position), Toast.LENGTH_LONG).show();
 				 */
@@ -249,7 +249,7 @@ public class SportsNewsPaper extends AppCompatActivity {
                     Intent intent = new Intent(SportsNewsPaper.this, BangladeshCricket.class);
                     startActivity(intent);
                 }
-                if (position ==9) {
+                if (position == 9) {
 
                     Intent intent = new Intent(SportsNewsPaper.this, BangladeshFootball.class);
                     startActivity(intent);
@@ -269,11 +269,11 @@ public class SportsNewsPaper extends AppCompatActivity {
             }
         });
 
-        AdView ad = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        ad.loadAd(adRequest);
+//        AdView ad = (AdView) findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        ad.loadAd(adRequest);
 
-initAd();
+        initAd();
     }
 
     @Override
@@ -282,6 +282,7 @@ initAd();
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
     private void disableNavigationViewScrollbars(NavigationView mNavigationView) {
         if (mNavigationView != null) {
             NavigationMenuView navigationMenuView = (NavigationMenuView) mNavigationView.getChildAt(0);
@@ -290,21 +291,22 @@ initAd();
             }
         }
     }
-      /*@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+    /*@Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+      // Handle action bar item clicks here. The action bar will
+      // automatically handle clicks on the Home/Up button, so long
+      // as you specify a parent activity in AndroidManifest.xml.
+      int id = item.getItemId();
 
-        return super.onOptionsItemSelected(item);
-    }*/
-      int count = 1;
+      //noinspection SimplifiableIfStatement
+      if (id == R.id.action_settings) {
+          return true;
+      }
+
+      return super.onOptionsItemSelected(item);
+  }*/
+    int count = 1;
 
     InterstitialAd mInterstitialAd;
 
@@ -316,7 +318,7 @@ initAd();
             LoadAdd();
         }
         // Get the Camera instance as the activity achieves full user focu
-        if (count ==1) {
+        if (count == 1) {
             // Toast.makeText(MainActivity.this, count, Toast.LENGTH_SHORT)
             // .show();
             displayAd();

@@ -295,9 +295,9 @@ public class Sylhet_local extends AppCompatActivity {
             }
         });
 
-        AdView ad = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        ad.loadAd(adRequest);
+//        AdView ad = (AdView) findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        ad.loadAd(adRequest);
 
     }
 

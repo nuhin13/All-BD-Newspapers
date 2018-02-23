@@ -41,9 +41,6 @@ public class BanglaNews extends AppCompatActivity {
 
     private GoogleApiClient client;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -385,9 +382,9 @@ public class BanglaNews extends AppCompatActivity {
             }
         });
 
-        ad = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        ad.loadAd(adRequest);
+//        ad = (AdView) findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        ad.loadAd(adRequest);
 
         initAd();
     }

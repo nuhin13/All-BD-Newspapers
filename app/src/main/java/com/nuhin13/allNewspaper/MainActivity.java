@@ -42,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
     public static final String PREF_USER_FIRST_TIME = "user_first_time";
     boolean isUserFirstTime;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -398,9 +396,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ad = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        ad.loadAd(adRequest);
+//        ad = (AdView) findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        ad.loadAd(adRequest);
 
         initAd();
     }
