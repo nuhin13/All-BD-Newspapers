@@ -41,7 +41,6 @@ public class Webcontent extends AppCompatActivity implements View.OnClickListene
     ProgressDialog mProgress;
     private AdView ad;
 
-    private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
 
@@ -50,8 +49,8 @@ public class Webcontent extends AppCompatActivity implements View.OnClickListene
     public DrawerLayout drawayerlayoutforSnakbar;
     private static final String webViewUrl = "http://m.prothom-alo.com";
 
-    TextView name ;
-    public boolean flag= true;
+    TextView name;
+    public boolean flag = true;
 
 
     @Override
@@ -62,14 +61,14 @@ public class Webcontent extends AppCompatActivity implements View.OnClickListene
         setUpWebView();
         setListeners();
 
-        name = (TextView)findViewById(R.id.name_txt);
+        name = (TextView) findViewById(R.id.name_txt);
         name.setText("দৈনিক প্রথম আলো");
 
         mProgress = ProgressDialog.show(this, "Loading", "অনুগ্রহ পূর্বক অপেক্ষা করুণ");
         mProgress.setCanceledOnTouchOutside(true);
-        rltv =(RelativeLayout)findViewById(R.id.layout);
+        rltv = (RelativeLayout) findViewById(R.id.layout);
 
-        if(flag==false){
+        if (flag == false) {
             if (mProgress.isShowing()) {
                 mProgress.dismiss();
 
@@ -84,99 +83,17 @@ public class Webcontent extends AppCompatActivity implements View.OnClickListene
 
                                 Webcontent.this.finish();
                             }
-                        })
-                        ;
+                        });
 
                 snackbar.show();
             }
         }
 
-        navigationView = (NavigationView) findViewById(R.id.navigation_view);
-
-        drawayerlayoutforSnakbar =(DrawerLayout) findViewById(R.id.drawer);
-
-
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-
-
-            @Override
-            public boolean onNavigationItemSelected(MenuItem menuItem) {
-
-
-                //Checking if the item is in checked state or not, if not make it in checked state
-                if(menuItem.isChecked()) menuItem.setChecked(false);
-                else menuItem.setChecked(true);
-
-                //Closing drawer on item click
-                drawerLayout.closeDrawers();
-
-                //Check to see which item was being clicked and perform appropriate action
-                switch (menuItem.getItemId()){
-
-                    case R.id.inbox:
-
-                        Intent intent = new Intent(Webcontent.this,BanglaNews.class);
-                        startActivity(intent);
-                        Webcontent.this.finish();
-                        return true;
-
-                    case R.id.starred:
-                        Intent intent1 = new Intent(Webcontent.this,EnglishNewPaper.class);
-                        startActivity(intent1);
-                        Webcontent.this.finish();
-                        return true;
-
-                    case R.id.sent_mail:
-                        Intent intent2 = new Intent(Webcontent.this,OnlineNewPaper.class);
-                        startActivity(intent2);
-                        Webcontent.this.finish();
-                        return true;
-                    case R.id.drafts:
-                        Intent intent3 = new Intent(Webcontent.this,SportsNewsPaper.class);
-                        startActivity(intent3);
-                        Webcontent.this.finish();
-                        return true;
-                    case R.id.allmail:
-                        Intent intent4 = new Intent(Webcontent.this,TechnologyBasedNewspaper.class);
-                        startActivity(intent4);
-                        Webcontent.this.finish();
-                        return true;
-                    case R.id.trash:
-                        Intent intent5 = new Intent(Webcontent.this,Local1st.class);
-                        startActivity(intent5);
-                        Webcontent.this.finish();
-                        return true;
-                    case R.id.rate:
-                        Intent rate = new Intent(Intent.ACTION_VIEW);
-                        rate.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.nuhin13.allNewspaper"));
-                        startActivity(rate);
-
-                        return true;
-                    case R.id.more:
-                        Intent intentMore = new Intent(Intent.ACTION_VIEW);
-                        intentMore.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.nuhin13.ExhaustiveKnowledge"));
-                        startActivity(intentMore);
-
-                        return true;
-                    case R.id.like:
-                        Facebook fb = new Facebook();
-                        Intent facebookIntent = new Intent(Intent.ACTION_VIEW);
-                        String facebookUrl = fb.getFacebookPageURL(Webcontent.this);
-                        facebookIntent.setData(Uri.parse(facebookUrl));
-                        startActivity(facebookIntent);
-                        return true;
-
-                    default:
-                        Toast.makeText(getApplicationContext(), "Somethings Wrong", Toast.LENGTH_SHORT).show();
-                        return true;
-
-                }
-            }
-        });
+        drawayerlayoutforSnakbar = (DrawerLayout) findViewById(R.id.drawer);
 
         // Initializing Drawer Layout and ActionBarToggle
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.openDrawer, R.string.closeDrawer){
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.openDrawer, R.string.closeDrawer) {
 
             @Override
             public void onDrawerClosed(View drawerView) {
@@ -332,7 +249,7 @@ public class Webcontent extends AppCompatActivity implements View.OnClickListene
             webView.loadUrl(url);
         else {
 
-            flag=false;
+            flag = false;
             refresh.setVisibility(View.VISIBLE);
 
             //    Toast.makeText(demo.this, "Oops!! There is no internet connection. Please enable your internet connection.", Toast.LENGTH_LONG).show();
@@ -351,243 +268,4 @@ public class Webcontent extends AppCompatActivity implements View.OnClickListene
             return false;
 
     }
-
-
-//    private Toolbar toolbar;
-//    private NavigationView navigationView;
-//    private DrawerLayout drawerLayout;
-//
-//    public ProgressDialog mProgress;
-//    private AdView ad;
-//
-//    private WebView webView;
-//    public void onCreate(Bundle savedInstanceState) {
-//
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.webcontent);
-//
-//
-//
-//        webView = (WebView)findViewById(R.id.webView);
-//        webView.getSettings().setJavaScriptEnabled(true);
-//        webView.getSettings().setBuiltInZoomControls(true);
-//        webView.getSettings().setSupportZoom(true);
-//
-//
-//        webView.loadUrl("http://m.prothom-alo.com");
-//            webView.setWebViewClient(new WebViewController());
-//
-//            toolbar = (Toolbar) findViewById(R.id.toolbar);
-//            setSupportActionBar(toolbar);
-//
-//            getSupportActionBar().setTitle("দৈনিক প্রথম আলো");
-//
-//        // the init state of progress dialog
-//            mProgress = ProgressDialog.show(this, "Loading", "অনুগ্রহ পূর্বক অপেক্ষা করুণ");
-//
-//            // add a WebViewClient for WebView, which actually handles loading data from web
-//            webView.setWebViewClient(new WebViewClient() {
-//                // load url
-//                public boolean shouldOverrideUrlLoading(WebView view, String url) {
-//                    view.loadUrl(url);
-//                    return true;
-//                }
-//
-//                // when finish loading page
-//                public void onPageFinished(WebView view, String url) {
-//                    if (mProgress.isShowing()) {
-//                        mProgress.dismiss();
-//                    }
-//
-//
-//                }
-//            });
-//
-//        mProgress.setCanceledOnTouchOutside(true);
-//
-//        navigationView = (NavigationView) findViewById(R.id.navigation_view);
-//
-//
-//        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-//
-//
-//            @Override
-//            public boolean onNavigationItemSelected(MenuItem menuItem) {
-//
-//
-//                //Checking if the item is in checked state or not, if not make it in checked state
-//                if(menuItem.isChecked()) menuItem.setChecked(false);
-//                else menuItem.setChecked(true);
-//
-//                //Closing drawer on item click
-//                drawerLayout.closeDrawers();
-//
-//                //Check to see which item was being clicked and perform appropriate action
-//                switch (menuItem.getItemId()){
-//
-//                    case R.id.inbox:
-//
-//                        Intent intent = new Intent(Webcontent.this,BanglaNews.class);
-//                        startActivity(intent);
-//                        Webcontent.this.finish();
-//                        return true;
-//
-//                    case R.id.starred:
-//                        Intent intent1 = new Intent(Webcontent.this,EnglishNewPaper.class);
-//                        startActivity(intent1);
-//                        Webcontent.this.finish();
-//                        return true;
-//
-//                    case R.id.sent_mail:
-//                        Intent intent2 = new Intent(Webcontent.this,OnlineNewPaper.class);
-//                        startActivity(intent2);
-//                        Webcontent.this.finish();
-//                        return true;
-//                    case R.id.drafts:
-//                        Intent intent3 = new Intent(Webcontent.this,SportsNewsPaper.class);
-//                        startActivity(intent3);
-//                        Webcontent.this.finish();
-//                        return true;
-//                    case R.id.allmail:
-//                        Intent intent4 = new Intent(Webcontent.this,TechnologyBasedNewspaper.class);
-//                        startActivity(intent4);
-//                        Webcontent.this.finish();
-//                        return true;
-//                    case R.id.trash:
-//                        Intent intent5 = new Intent(Webcontent.this,Local1st.class);
-//                        startActivity(intent5);
-//                        Webcontent.this.finish();
-//                        return true;
-//                    case R.id.rate:
-//                        Intent rate = new Intent(Intent.ACTION_VIEW);
-//                        rate.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.nuhin13.allNewspaper"));
-//                        startActivity(rate);
-//
-//                        return true;
-//                    case R.id.more:
-//                        Intent intentMore = new Intent(Intent.ACTION_VIEW);
-//                        intentMore.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.nuhin13.ExhaustiveKnowledge"));
-//                        startActivity(intentMore);
-//
-//                        return true;
-//                    case R.id.like:
-//                        Facebook fb = new Facebook();
-//                        Intent facebookIntent = new Intent(Intent.ACTION_VIEW);
-//                        String facebookUrl = fb.getFacebookPageURL(Webcontent.this);
-//                        facebookIntent.setData(Uri.parse(facebookUrl));
-//                        startActivity(facebookIntent);
-//                        return true;
-//                    default:
-//                        Toast.makeText(getApplicationContext(),"Somethings Wrong",Toast.LENGTH_SHORT).show();
-//                        return true;
-//
-//                }
-//            }
-//        });
-//
-//        // Initializing Drawer Layout and ActionBarToggle
-//        drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
-//        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.openDrawer, R.string.closeDrawer){
-//
-//            @Override
-//            public void onDrawerClosed(View drawerView) {
-//                // Code here will be triggered once the drawer closes as we dont want anything to happen so we leave this blank
-//                super.onDrawerClosed(drawerView);
-//            }
-//
-//            @Override
-//            public void onDrawerOpened(View drawerView) {
-//                // Code here will be triggered once the drawer open as we dont want anything to happen so we leave this blank
-//
-//                super.onDrawerOpened(drawerView);
-//            }
-//        };
-//
-//        //Setting the actionbarToggle to drawer layout
-//        drawerLayout.setDrawerListener(actionBarDrawerToggle);
-//
-//        //calling sync state is necessay or else your hamburger icon wont show up
-//        actionBarDrawerToggle.syncState();
-//
-//
-//
-//        ad = (AdView) findViewById(R.id.adView);
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        ad.loadAd(adRequest);
-//
-//
-//    }
-//
-//    public class WebViewController extends WebViewClient {
-//
-//        /*ProgressDialog mProgressDialog;
-//
-//
-//        public void onPageFinished(WebView webview, String s)
-//        {
-//            super.onPageFinished(webview, s);
-//
-//            if (mProgressDialog.isShowing())
-//            {
-//                mProgressDialog.dismiss();
-//            }
-//        }
-//
-//        public void onPageStarted(WebView webview, String s, Bitmap bitmap)
-//        {
-//            super.onPageStarted(webview, s, bitmap);
-//            if (!mProgressDialog.isShowing())
-//            {
-//                mProgressDialog.show();
-//            }
-//        }*/
-//        @Override
-//        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-//
-//
-//            view.loadUrl(url);
-//            return true;
-//        }
-//    }
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_main, menu);
-//        return true;
-//    }
-//
-//    /*@Override
-// public boolean onOptionsItemSelected(MenuItem item) {
-//     // Handle action bar item clicks here. The action bar will
-//     // automatically handle clicks on the Home/Up button, so long
-//     // as you specify a parent activity in AndroidManifest.xml.
-//     int id = item.getItemId();
-//
-//     //noinspection SimplifiableIfStatement
-//     if (id == R.id.action_settings) {
-//         return true;
-//     }
-//
-//     return super.onOptionsItemSelected(item);
-// }*/
-//@Override
-//    public void onBackPressed()
-//    {
-//        if (webView.canGoBack())
-//        {
-//            webView.goBack();
-//            return;
-//        } else
-//        {
-//            super.onBackPressed();
-//            return;
-//        }
-//    }
-//
-//    private boolean isNetworkAvailable() {
-//        ConnectivityManager connectivityManager
-//                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-//        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-//        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
-//    }
 }

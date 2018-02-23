@@ -41,7 +41,6 @@ public class SurmaTimes extends AppCompatActivity implements View.OnClickListene
     ProgressDialog mProgress;
     private AdView ad;
 
-    private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
 
@@ -91,88 +90,7 @@ public class SurmaTimes extends AppCompatActivity implements View.OnClickListene
             }
         }
 
-        navigationView = (NavigationView) findViewById(R.id.navigation_view);
-
         drawayerlayoutforSnakbar =(DrawerLayout) findViewById(R.id.drawer);
-
-
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-
-
-            @Override
-            public boolean onNavigationItemSelected(MenuItem menuItem) {
-
-
-                //Checking if the item is in checked state or not, if not make it in checked state
-                if(menuItem.isChecked()) menuItem.setChecked(false);
-                else menuItem.setChecked(true);
-
-                //Closing drawer on item click
-                drawerLayout.closeDrawers();
-
-                //Check to see which item was being clicked and perform appropriate action
-                switch (menuItem.getItemId()){
-
-                    case R.id.inbox:
-
-                        Intent intent = new Intent(SurmaTimes.this,BanglaNews.class);
-                        startActivity(intent);
-                        SurmaTimes.this.finish();
-                        return true;
-
-                    case R.id.starred:
-                        Intent intent1 = new Intent(SurmaTimes.this,EnglishNewPaper.class);
-                        startActivity(intent1);
-                        SurmaTimes.this.finish();
-                        return true;
-
-                    case R.id.sent_mail:
-                        Intent intent2 = new Intent(SurmaTimes.this,OnlineNewPaper.class);
-                        startActivity(intent2);
-                        SurmaTimes.this.finish();
-                        return true;
-                    case R.id.drafts:
-                        Intent intent3 = new Intent(SurmaTimes.this,SportsNewsPaper.class);
-                        startActivity(intent3);
-                        SurmaTimes.this.finish();
-                        return true;
-                    case R.id.allmail:
-                        Intent intent4 = new Intent(SurmaTimes.this,TechnologyBasedNewspaper.class);
-                        startActivity(intent4);
-                        SurmaTimes.this.finish();
-                        return true;
-                    case R.id.trash:
-                        Intent intent5 = new Intent(SurmaTimes.this,Local1st.class);
-                        startActivity(intent5);
-                        SurmaTimes.this.finish();
-                        return true;
-                    case R.id.rate:
-                        Intent rate = new Intent(Intent.ACTION_VIEW);
-                        rate.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.nuhin13.allNewspaper"));
-                        startActivity(rate);
-
-                        return true;
-                    case R.id.more:
-                        Intent intentMore = new Intent(Intent.ACTION_VIEW);
-                        intentMore.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.nuhin13.ExhaustiveKnowledge"));
-                        startActivity(intentMore);
-
-                        return true;
-                    case R.id.like:
-                        Facebook fb = new Facebook();
-                        Intent facebookIntent = new Intent(Intent.ACTION_VIEW);
-                        String facebookUrl = fb.getFacebookPageURL(SurmaTimes.this);
-                        facebookIntent.setData(Uri.parse(facebookUrl));
-                        startActivity(facebookIntent);
-                        return true;
-
-                    default:
-                        Toast.makeText(getApplicationContext(), "Somethings Wrong", Toast.LENGTH_SHORT).show();
-                        return true;
-
-                }
-            }
-        });
 
         // Initializing Drawer Layout and ActionBarToggle
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
